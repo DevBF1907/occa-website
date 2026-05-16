@@ -4,12 +4,19 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const NAV_LINKS = [
   { name: 'O ECOSSISTEMA', href: '/ecosystem' },
   { name: 'SOBRE NÓS', href: '/about' },
+  { 
+    name: 'SERVIÇOS', 
+    href: '#',
+    items: [
+      { name: 'CoOccaSpace', href: '/services/cooccaspace' }
+    ]
+  },
   { name: 'KNOWLEDGE HUB', href: '/hub' },
   { name: 'COMUNIDADE', href: '/community' },
   { name: 'SUPORTE', href: '/support' },
@@ -39,16 +46,44 @@ export const Navbar = () => {
 
           <div className="hidden lg:flex items-center gap-12">
             {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={cn(
-                  "text-[10px] font-bold tracking-[0.3em] uppercase transition-all duration-300 hover:text-brand-white hover-trigger",
-                  pathname === link.href ? "text-brand-white" : "text-brand-gray-5"
+              <div key={link.name} className="relative group">
+                {link.items ? (
+                  <div className="flex items-center gap-1 cursor-pointer hover-trigger">
+                    <span className={cn(
+                      "text-[10px] font-bold tracking-[0.3em] uppercase transition-all duration-300 group-hover:text-brand-white",
+                      pathname.startsWith('/services') ? "text-brand-white" : "text-brand-gray-5"
+                    )}>
+                      {link.name}
+                    </span>
+                    <ChevronDown className="w-3 h-3 text-brand-gray-5 group-hover:text-brand-white transition-colors" />
+                    
+                    {/* Dropdown Menu */}
+                    <div className="absolute top-full left-0 pt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                      <div className="bg-brand-black/90 backdrop-blur-md border border-brand-white/10 p-6 min-w-[220px] flex flex-col gap-5 shadow-2xl">
+                        {link.items.map(subItem => (
+                          <Link 
+                            key={subItem.name} 
+                            href={subItem.href}
+                            className="text-[10px] font-bold tracking-[0.3em] uppercase text-brand-gray-5 hover:text-brand-white hover:translate-x-1 transition-all"
+                          >
+                            {subItem.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    href={link.href}
+                    className={cn(
+                      "text-[10px] font-bold tracking-[0.3em] uppercase transition-all duration-300 hover:text-brand-white hover-trigger",
+                      pathname === link.href ? "text-brand-white" : "text-brand-gray-5"
+                    )}
+                  >
+                    {link.name}
+                  </Link>
                 )}
-              >
-                {link.name}
-              </Link>
+              </div>
             ))}
             <button className="px-6 py-2 border border-brand-white/20 text-[10px] font-bold uppercase tracking-widest hover:bg-brand-white hover:text-brand-black transition-all duration-300 hover-trigger">
               MEMBERSHIP
@@ -81,16 +116,37 @@ export const Navbar = () => {
               </button>
             </div>
             
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-8 overflow-y-auto">
               {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-4xl font-display tracking-tight text-brand-white uppercase"
-                >
-                  {link.name}
-                </Link>
+                <div key={link.name}>
+                  {link.items ? (
+                    <div className="flex flex-col gap-4">
+                      <span className="text-4xl font-display tracking-tight text-brand-white/50 uppercase">
+                        {link.name}
+                      </span>
+                      <div className="flex flex-col gap-4 pl-6 border-l border-brand-white/10 ml-2 mt-2">
+                        {link.items.map(subItem => (
+                          <Link
+                            key={subItem.name}
+                            href={subItem.href}
+                            onClick={() => setIsOpen(false)}
+                            className="text-2xl font-display tracking-tight text-brand-white uppercase"
+                          >
+                            {subItem.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className="text-4xl font-display tracking-tight text-brand-white uppercase block"
+                    >
+                      {link.name}
+                    </Link>
+                  )}
+                </div>
               ))}
             </div>
 
