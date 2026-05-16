@@ -9,26 +9,24 @@ const Hero = () => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=2070" 
-          alt="OCCA Space"
-          className="w-full h-full object-cover opacity-30 grayscale saturate-0"
-          referrerPolicy="no-referrer"
+        <iframe
+          src="https://www.youtube.com/embed/V4pausDurSI?autoplay=1&mute=1&loop=1&playlist=V4pausDurSI&controls=0&modestbranding=1&rel=0&playsinline=1&enablejsapi=1&iv_load_policy=3"
+          title="OCCA Space"
+          className="absolute left-1/2 top-1/2 h-[120vh] w-[120vw] -translate-x-1/2 -translate-y-1/2 opacity-50 grayscale transition-opacity duration-1000 pointer-events-none"
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+          allowFullScreen
+          referrerPolicy="strict-origin-when-cross-origin"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent" />
       </div>
 
-      <div className="relative z-10 text-center px-6">
+      <div className="relative z-10 text-center px-6 translate-y-36">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: 'easeOut' }}
         >
-          <SectionLabel className="justify-center mb-8">Open Creative Community Alliance</SectionLabel>
-          <h1 className="text-[12vw] md:text-[10vw] font-display leading-[0.8] tracking-tighter uppercase mb-8">
-            FUTURE <br /> <span className="italic font-serif text-brand-gray-5 lowercase">of</span> CREATIVITY
-          </h1>
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-12">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
             <button className="px-12 py-5 bg-brand-white text-brand-black text-[11px] font-bold uppercase tracking-[0.3em] hover:bg-brand-rust hover:text-brand-white transition-all duration-500 hover-trigger">
               INICIAR JORNADA
             </button>

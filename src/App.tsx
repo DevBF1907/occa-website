@@ -6,7 +6,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'motion/react';
-import { GrainCanvas, CustomCursor } from './components/CoreUI';
+import { GrainCanvas } from './components/CoreUI';
 import Home from './pages/Home';
 import About from './pages/About';
 import Ecosystem from './pages/Ecosystem';
@@ -43,7 +43,6 @@ export default function App() {
     <Router>
       <div className="min-h-screen bg-brand-black text-brand-white font-mono selection:bg-brand-white selection:text-brand-black">
         <GrainCanvas />
-        <CustomCursor />
         <div className="scan-line" />
         
         <PageWrapper />
