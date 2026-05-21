@@ -8,18 +8,19 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const NAV_LINKS = [
-  { name: 'O ECOSSISTEMA', href: '/ecosystem' },
+  { name: 'O ECOSSISTEMA', href: '../sections/EcosystemSection' },
   { name: 'SOBRE NÓS', href: '/about' },
   { 
     name: 'SERVIÇOS', 
     href: '#',
     items: [
-      { name: 'CoOccaSpace', href: '/services/cooccaspace' }
+      { name: 'CoOccaSpace', href: '/services/cooccaspace' },
+      { name: 'OCCA Open Inovation', href: '/services/occaopeninovation' }
     ]
   },
   { name: 'KNOWLEDGE HUB', href: '/hub' },
   { name: 'COMUNIDADE', href: '/community' },
-  { name: 'SUPORTE', href: '/support' },
+  { name: 'Fale Conosco', href: '/contactus' },
 ];
 
 export const Navbar = () => {

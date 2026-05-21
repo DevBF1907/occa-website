@@ -40,6 +40,12 @@
       "regex": "^/_not\\-found(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/services/cooccaspace",
+      "regex": "^/services/cooccaspace(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/cooccaspace(?:/)?$"
     }
   ],
   "dataRoutes": [],

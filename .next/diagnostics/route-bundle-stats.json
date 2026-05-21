@@ -1,11 +1,26 @@
 [
   {
-    "route": "/",
-    "firstLoadUncompressedJsBytes": 683222,
+    "route": "/services/cooccaspace",
+    "firstLoadUncompressedJsBytes": 691206,
     "firstLoadChunkPaths": [
       ".next/static/chunks/01xlw8hd842-c.js",
       ".next/static/chunks/0d3shmwh5_nmn.js",
-      ".next/static/chunks/053xqdqi-lob9.js",
+      ".next/static/chunks/0v.r~9g-v10in.js",
+      ".next/static/chunks/0avythmg6-d21.js",
+      ".next/static/chunks/00gq-v0e07i1q.js",
+      ".next/static/chunks/0bymg5d-lqs0o.js",
+      ".next/static/chunks/07lhk_q6pmm3r.js",
+      ".next/static/chunks/turbopack-134gd3wlo5u4g.js"
+    ]
+  },
+  {
+    "route": "/",
+    "firstLoadUncompressedJsBytes": 685184,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/01xlw8hd842-c.js",
+      ".next/static/chunks/0d3shmwh5_nmn.js",
+      ".next/static/chunks/17rqn8vrvqbf1.js",
+      ".next/static/chunks/0d85692iq8gic.js",
       ".next/static/chunks/00gq-v0e07i1q.js",
       ".next/static/chunks/0bymg5d-lqs0o.js",
       ".next/static/chunks/07lhk_q6pmm3r.js",
