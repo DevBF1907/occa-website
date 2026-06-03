@@ -8,7 +8,7 @@ import { PROGRAMS } from '@/lib/data';
 
 export const EcosystemSection = () => {
   return (
-    <section className="py-40 px-6 md:px-12 max-w-[1800px] mx-auto">
+    <section id="ecossistema" className="py-40 px-6 md:px-12 max-w-[1800px] mx-auto">
       <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-12">
         <div className="max-w-2xl">
           <SectionLabel>PROGRAMAS</SectionLabel>

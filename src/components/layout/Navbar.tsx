@@ -8,7 +8,7 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const NAV_LINKS = [
-  { name: 'O ECOSSISTEMA', href: '../sections/EcosystemSection' },
+  { name: 'O ECOSSISTEMA', href: '/#ecossistema' },
   { name: 'SOBRE NÓS', href: '/about' },
   { 
     name: 'SERVIÇOS', 
