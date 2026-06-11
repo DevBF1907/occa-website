@@ -21,7 +21,7 @@ export default function Home() {
               <div key={i} className="flex items-center">
                 <span className="text-[10px] font-bold tracking-[.4em] uppercase text-brand-white mx-12">OPEN CREATIVE COMMUNITY ALLIANCE</span>
                 <span className="text-brand-gray-3 tracking-widest opacity-20">///</span>
-                <span className="text-[10px] font-bold tracking-[.4em] uppercase text-brand-white mx-12 italic font-serif">OLINDA, BRAZIL</span>
+                <span className="text-[10px] font-bold tracking-[.4em] uppercase text-brand-white mx-12 italic font-serif">OLINDA, BRASIL</span>
                 <span className="text-brand-gray-3 tracking-widest opacity-20">///</span>
               </div>
             ))}

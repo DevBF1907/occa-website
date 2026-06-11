@@ -15,7 +15,7 @@ export const Footer = () => (
     <div className="max-w-[1800px] mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
         <div className="lg:col-span-1">
-          <span className="text-3xl font-display tracking-widest text-brand-white uppercase mb-8 block">OCCA</span>
+          <img src="/logo-occa.png" alt="OCCA" className="h-10 w-auto mb-8" />
           <p className="text-brand-gray-5 text-sm leading-relaxed max-w-xs mb-8">
             Um ecossistema vivo de inovação e cultura, operando na interseção entre tecnologia e comunidade.
           </p>
@@ -59,7 +59,7 @@ export const Footer = () => (
               placeholder="SEU EMAIL" 
               className="bg-transparent text-[10px] font-bold focus:outline-none flex-1 uppercase tracking-widest text-brand-white"
             />
-            <button className="text-brand-white ml-4" aria-label="Subscribe"><ArrowRight className="w-4 h-4" /></button>
+            <button className="text-brand-white ml-4" aria-label="Inscrever-se"><ArrowRight className="w-4 h-4" /></button>
           </div>
         </div>
       </div>

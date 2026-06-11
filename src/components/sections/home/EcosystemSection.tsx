@@ -4,7 +4,19 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import { SectionLabel } from '@/components/shared/SectionLabel';
-import { PROGRAMS } from '@/lib/data';
+
+interface Initiative {
+  id: string;
+  name: string;
+  image?: string;
+}
+
+const INITIATIVES: Initiative[] = [
+  { id: 'social-club', name: 'OCCA Social Club', image: '/occa-social.png' },
+  { id: 'occasulo', name: 'OccaSulO', image: '/occasulo.png' },
+  { id: 'academy', name: 'OCCA Academy', image: '/occa-academy.png' },
+  { id: 'coworking-coliving', name: 'Coworking & Coliving' },
+];
 
 export const EcosystemSection = () => {
   return (
@@ -13,7 +25,7 @@ export const EcosystemSection = () => {
         <div className="max-w-2xl">
           <SectionLabel>PROGRAMAS</SectionLabel>
           <h2 className="text-[8vw] md:text-[5vw] font-display uppercase leading-[0.9] tracking-tighter">
-            INFRAESTRUTURA <br /> CRIATIVA
+            INICIATIVAS <br /> DE OCCA
           </h2>
         </div>
         <button className="text-[10px] font-bold uppercase tracking-[0.4em] text-brand-gray-5 hover:text-brand-white transition-colors border-b border-brand-gray-3 pb-2 hover-trigger">
@@ -22,38 +34,43 @@ export const EcosystemSection = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {PROGRAMS.map((program) => (
-          <motion.div 
-            key={program.id}
+        {INITIATIVES.map((item) => (
+          <motion.div
+            key={item.id}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="group relative h-[600px] overflow-hidden border border-brand-white/5 flex flex-col justify-end p-8 hover-trigger cursor-pointer"
+            className={`group relative overflow-hidden border border-brand-white/5 hover-trigger cursor-pointer ${
+              item.id === 'occasulo' || item.id === 'academy'
+                ? 'h-[400px]'
+                : 'h-[600px] flex flex-col justify-end p-8'
+            }`}
           >
-            {/* Standard img used to avoid next/image domain configuration issues currently */}
-            <img 
-              src={program.image} 
-              alt={program.name}
-              className="absolute inset-0 w-full h-full object-cover grayscale transition-transform duration-1000 group-hover:scale-110 opacity-40 group-hover:opacity-60"
-              referrerPolicy="no-referrer"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/40 to-transparent" />
-            
-            <div className="relative z-10 transition-transform duration-500 group-hover:-translate-y-4">
-              <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-brand-white/40 mb-4 block">
-                {program.category}
-              </span>
-              <h3 className="text-4xl font-display uppercase tracking-tight text-brand-white mb-6">
-                {program.name}
-              </h3>
-              <p className="text-xs text-brand-gray-5 mb-8 line-clamp-2 uppercase tracking-widest leading-relaxed">
-                {program.description}
-              </p>
-              <div className="flex items-center gap-4 text-brand-white opacity-0 group-hover:opacity-100 transition-opacity">
-                <span className="text-[10px] font-bold uppercase tracking-[0.3em]">EXPLORAR</span>
-                <ArrowRight className="w-4 h-4" />
+            {item.image ? (
+              <div className="absolute inset-0 bg-brand-black">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full h-full object-contain grayscale opacity-60"
+                />
               </div>
-            </div>
+            ) : (
+              <div className="absolute inset-0 bg-brand-gray-1/30" />
+            )}
+            {item.id !== 'occasulo' && item.id !== 'academy' && (
+              <>
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-black/70 via-transparent to-transparent" />
+                <div className="relative z-10">
+                  <h3 className="text-4xl font-display uppercase tracking-tight text-brand-white">
+                    {item.name}
+                  </h3>
+                  <div className="flex items-center gap-4 text-brand-white opacity-0 group-hover:opacity-100 transition-opacity mt-6">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.3em]">EXPLORAR</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </div>
+                </div>
+              </>
+            )}
           </motion.div>
         ))}
       </div>

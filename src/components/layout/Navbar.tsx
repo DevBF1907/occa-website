@@ -41,8 +41,12 @@ export const Navbar = () => {
         scrolled ? "py-4 bg-brand-black/80 backdrop-blur-md border-b border-brand-white/10" : "py-8"
       )}>
         <div className="max-w-[1800px] mx-auto flex justify-between items-center">
-          <Link href="/" className="text-2xl font-display tracking-[0.2em] text-brand-white uppercase hover-trigger">
-            OCCA
+          <Link href="/" className="hover-trigger flex items-center">
+            <img
+              src="/logo-occa.png"
+              alt="OCCA"
+              className="h-10 w-auto"
+            />
           </Link>
 
           <div className="hidden lg:flex items-center gap-12">
@@ -94,7 +98,7 @@ export const Navbar = () => {
           <button 
             className="lg:hidden text-brand-white hover-trigger"
             onClick={() => setIsOpen(true)}
-            aria-label="Toggle menu"
+            aria-label="Abrir menu"
           >
             <Menu className="w-6 h-6" />
           </button>
@@ -111,8 +115,12 @@ export const Navbar = () => {
             className="fixed inset-0 bg-brand-black z-[100] flex flex-col p-8 lg:hidden"
           >
             <div className="flex justify-between items-center mb-12">
-              <span className="text-2xl font-display tracking-[0.2em] text-brand-white uppercase">OCCA</span>
-              <button onClick={() => setIsOpen(false)} aria-label="Close menu">
+              <img
+                src="/logo-occa.png"
+                alt="OCCA"
+                className="h-10 w-auto"
+              />
+              <button onClick={() => setIsOpen(false)} aria-label="Fechar menu">
                 <X className="w-6 h-6 text-brand-white" />
               </button>
             </div>
