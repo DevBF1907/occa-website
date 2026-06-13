@@ -37,7 +37,7 @@ export default function CoOccaSpacePage() {
               <h1 className="text-6xl md:text-9xl font-display uppercase tracking-tighter mb-6 leading-none">
                 COOCCA<span className="italic font-serif text-brand-gray-5 lowercase">space</span>
               </h1>
-              <p className="text-brand-gray-5 text-sm uppercase tracking-[0.2em] max-w-xl mx-auto leading-relaxed mb-12">
+              <p className="text-brand-white/80 text-sm uppercase tracking-[0.2em] max-w-xl mx-auto leading-relaxed mb-12">
                 Conectando moradia, produtividade e desenvolvimento criativo no centro histórico de Olinda.
               </p>
               
@@ -69,13 +69,13 @@ export default function CoOccaSpacePage() {
         {/* Call to Action Section */}
         <section className="py-32 px-6 border-t border-brand-white/5 bg-brand-gray-1/10">
           <div className="max-w-4xl mx-auto text-center">
-            <span className="text-[10px] font-mono font-bold tracking-[0.4em] uppercase text-brand-gray-5 mb-8 block">
+            <span className="text-[10px] font-mono font-bold tracking-[0.4em] uppercase text-brand-white/60 mb-8 block">
               FAÇA PARTE
             </span>
             <h2 className="text-4xl md:text-7xl font-display uppercase tracking-tighter mb-8">
-              RESERVE SEU <span className="italic font-serif text-brand-gray-5 lowercase">lugar</span> NA ALIANÇA
+              RESERVE SEU <span className="italic font-serif text-brand-white/60 lowercase">lugar</span> NA ALIANÇA
             </h2>
-            <p className="text-brand-gray-5 text-xs uppercase tracking-[0.2em] max-w-md mx-auto mb-12 leading-relaxed">
+            <p className="text-brand-white/80 text-xs uppercase tracking-[0.2em] max-w-md mx-auto mb-12 leading-relaxed">
               Entre em contato para agendar uma visita, verificar disponibilidade de residência ou contratar planos corporativos de coworking.
             </p>
             <button className="px-16 py-6 bg-brand-white text-brand-black text-xs font-bold uppercase tracking-[0.3em] hover:bg-brand-rust hover:text-brand-white transition-all duration-500 hover-trigger">
