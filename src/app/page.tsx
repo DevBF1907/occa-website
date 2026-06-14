@@ -3,7 +3,6 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { HeroSection } from '@/components/sections/home/HeroSection';
 import { ManifestoSection } from '@/components/sections/home/ManifestoSection';
-import { MandalaSection } from '@/components/sections/home/MandalaSection';
 import { EcosystemSection } from '@/components/sections/home/EcosystemSection';
 import { SectionLabel } from '@/components/shared/SectionLabel';
 
@@ -38,7 +37,6 @@ export default function Home() {
         </div>
 
         <ManifestoSection />
-        <MandalaSection />
         <EcosystemSection />
 
         {/* Community CTA */}

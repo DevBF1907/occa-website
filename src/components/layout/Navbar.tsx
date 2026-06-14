@@ -8,6 +8,7 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const NAV_LINKS = [
+  { name: 'MANDALA', href: '/mandala' },
   { name: 'O ECOSSISTEMA', href: '/#ecossistema' },
   { name: 'SOBRE NÓS', href: '/about' },
   { 
