@@ -40,37 +40,29 @@ export const EcosystemSection = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            className={`group relative overflow-hidden border border-brand-white/5 hover-trigger cursor-pointer ${
-              item.id === 'occasulo' || item.id === 'academy'
-                ? 'h-[400px]'
-                : 'h-[600px] flex flex-col justify-end p-8'
-            }`}
+            className="group relative overflow-hidden border border-brand-white/5 hover-trigger cursor-pointer h-[600px] flex flex-col justify-end p-8"
           >
             {item.image ? (
-              <div className="absolute inset-0 bg-brand-black">
+              <div className="absolute inset-x-0 top-0 bottom-36 flex items-center justify-center px-6 pt-8 pb-4 md:px-10 md:pt-12">
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-full h-full object-contain grayscale opacity-60"
+                  className="max-w-full max-h-full w-auto h-auto object-contain object-center grayscale opacity-60 group-hover:opacity-80 transition-opacity duration-500"
                 />
               </div>
             ) : (
               <div className="absolute inset-0 bg-brand-gray-1/30" />
             )}
-            {item.id !== 'occasulo' && item.id !== 'academy' && (
-              <>
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-black/70 via-transparent to-transparent" />
-                <div className="relative z-10">
-                  <h3 className="text-4xl font-display uppercase tracking-tight text-brand-white">
-                    {item.name}
-                  </h3>
-                  <div className="flex items-center gap-4 text-brand-white opacity-0 group-hover:opacity-100 transition-opacity mt-6">
-                    <span className="text-[10px] font-bold uppercase tracking-[0.3em]">EXPLORAR</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </div>
-                </div>
-              </>
-            )}
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-black/70 via-transparent to-transparent" />
+            <div className="relative z-10">
+              <h3 className="text-4xl font-display uppercase tracking-tight text-brand-white">
+                {item.name}
+              </h3>
+              <div className="flex items-center gap-4 text-brand-white opacity-0 group-hover:opacity-100 transition-opacity mt-6">
+                <span className="text-[10px] font-bold uppercase tracking-[0.3em]">EXPLORAR</span>
+                <ArrowRight className="w-4 h-4" />
+              </div>
+            </div>
           </motion.div>
         ))}
       </div>
