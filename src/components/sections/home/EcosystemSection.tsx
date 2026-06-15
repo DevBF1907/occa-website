@@ -8,14 +8,39 @@ import { SectionLabel } from '@/components/shared/SectionLabel';
 interface Initiative {
   id: string;
   name: string;
+  description: string;
+  link: string;
   image?: string;
 }
 
 const INITIATIVES: Initiative[] = [
-  { id: 'social-club', name: 'OCCA Social Club', image: '/occa-social.png' },
-  { id: 'occasulo', name: 'OccaSulO', image: '/occasulo.png' },
-  { id: 'academy', name: 'OCCA Academy', image: '/occa-academy.png' },
-  { id: 'coworking-coliving', name: 'Coworking & Coliving' },
+  {
+    id: 'cooccaspace',
+    name: 'Co.OCCA.Space',
+    description: 'Infraestrutura administrativa — coworking, coliving e espaços para criar.',
+    link: '/services/cooccaspace',
+    image: '/occa-social.png'
+  },
+  {
+    id: 'open-innovation',
+    name: 'OCCA Open Innovation',
+    description: 'Produtos e Serviços de Inovação Aberta para empresas e instituições.',
+    link: '/services/occaopeninovation',
+    image: '/occasulo.png'
+  },
+  {
+    id: 'academy',
+    name: 'OCCA Academy',
+    description: 'Programas educacionais — cursos, bootcamps e residências.',
+    link: '/ecosystem/academy',
+    image: '/occa-academy.png'
+  },
+  {
+    id: 'occasulo',
+    name: 'OCCAsulo',
+    description: 'Incubadora distribuída para territórios — impacto local e global.',
+    link: '/ecosystem/occasulo'
+  },
 ];
 
 export const EcosystemSection = () => {
@@ -35,7 +60,7 @@ export const EcosystemSection = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {INITIATIVES.map((item) => (
-          <motion.div
+          <a
             key={item.id}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -49,9 +74,10 @@ export const EcosystemSection = () => {
                   alt={item.name}
                   className="max-w-full max-h-full w-auto h-auto object-contain object-center grayscale opacity-60 group-hover:opacity-80 transition-opacity duration-500"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-brand-black/40 to-brand-black/20" />
               </div>
             ) : (
-              <div className="absolute inset-0 bg-brand-gray-1/30" />
+              <div className="absolute inset-0 bg-brand-gray-1/30 group-hover:bg-brand-gray-1/50 transition-colors" />
             )}
             <div className="absolute inset-0 bg-gradient-to-t from-brand-black/70 via-transparent to-transparent" />
             <div className="relative z-10">

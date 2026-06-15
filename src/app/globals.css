@@ -11,9 +11,10 @@
   --color-brand-gray-1: #111111;
   --color-brand-gray-2: #1a1a1a;
   --color-brand-gray-3: #2a2a2a;
-  --color-brand-gray-4: #444444;
-  --color-brand-gray-5: #888888;
+  --color-brand-gray-4: #666666;
+  --color-brand-gray-5: #a0a0a0;
   --color-brand-rust: #642a0a;
+  --color-brand-accent: #c94d2b;
 }
 
 @layer base {
