@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { Play } from 'lucide-react';
 
 export const HeroSection = () => {
   return (
@@ -17,23 +16,25 @@ export const HeroSection = () => {
           referrerPolicy="strict-origin-when-cross-origin"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/20 to-brand-black/60" />
+        <div className="absolute inset-0 bg-brand-black/40" />
       </div>
 
-      <div className="relative z-10 text-center px-6 translate-y-36">
+      <div className="relative z-10 text-center px-6 translate-y-24">
         <motion.div
           initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-            <button className="px-12 py-5 bg-brand-white text-brand-black text-[11px] font-bold uppercase tracking-[0.3em] hover:bg-brand-rust hover:text-brand-white transition-all duration-500 hover-trigger">
-              INICIAR JORNADA
-            </button>
-            <button className="flex items-center gap-4 text-[11px] font-bold uppercase tracking-[0.3em] text-brand-white hover-trigger group">
-              <span className="w-10 h-10 rounded-full border border-brand-white/20 flex items-center justify-center group-hover:bg-brand-white group-hover:text-brand-black transition-all duration-500">
-                <Play className="w-3 h-3 fill-current ml-1" />
-              </span>
-              VER MANIFESTO
+          <p className="text-sm md:text-base uppercase tracking-[0.3em] text-brand-white/80 mb-8">
+            Sem medo do erro, sem pavor de definições. Nós somos
+          </p>
+          <h1 className="text-[12vw] md:text-[8vw] font-display uppercase leading-[0.85] tracking-tighter mb-12 text-brand-white">
+            um ecossistema <br />
+            <span className="italic font-serif text-brand-gray-5 lowercase">que transforma o ser.</span>
+          </h1>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-12">
+            <button className="px-12 py-5 bg-brand-white text-brand-black text-[11px] font-bold uppercase tracking-[0.3em] hover:bg-brand-accent hover:text-brand-white transition-all duration-500 hover-trigger">
+              SAIBA MAIS
             </button>
           </div>
         </motion.div>
@@ -42,10 +43,22 @@ export const HeroSection = () => {
       <div className="absolute bottom-12 left-12 hidden md:block z-10">
         <div className="flex items-center gap-6">
           <div className="w-px h-12 bg-brand-gray-3" />
-          <div className="text-[10px] font-bold uppercase tracking-widest text-brand-gray-5">
-            LOCATION / OLINDA, PE <br />
-            STATUS / LIVE ECOSYSTEM
+          <div className="text-[10px] font-bold uppercase tracking-widest text-brand-white/80">
+            <a href="https://maps.google.com/?q=Rua+Manoel+Borba+285+Carmo+Olinda+PE" target="_blank" rel="noopener noreferrer" className="hover:text-brand-white transition-colors">
+              LOCATION / OLINDA - PE<br />CARMO - RUA MANOEL BORBA, 285
+            </a>
           </div>
+        </div>
+      </div>
+
+      <div className="absolute bottom-12 right-12 hidden md:block z-10">
+        <div className="flex items-center gap-6">
+          <div className="text-[10px] font-bold uppercase tracking-widest text-brand-white/80 text-right">
+            <a href="/about" className="hover:text-brand-white transition-colors">
+              INSTITUTO E ASSOCIAÇÃO<br />CIÊNCIA / TECNOLOGIA / INOVAÇÃO
+            </a>
+          </div>
+          <div className="w-px h-12 bg-brand-gray-3" />
         </div>
       </div>
     </section>
