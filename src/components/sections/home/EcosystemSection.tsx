@@ -12,10 +12,10 @@ interface Initiative {
 }
 
 const INITIATIVES: Initiative[] = [
-  { id: 'social-club', name: 'OCCA Social Club', image: '/occa-social.png' },
+  { id: 'social-club', name: 'OCCA Social Club', image: '/occa-social-club.png' },
   { id: 'occasulo', name: 'OccaSulO', image: '/occasulo.png' },
   { id: 'academy', name: 'OCCA Academy', image: '/occa-academy.png' },
-  { id: 'coworking-coliving', name: 'Coworking & Coliving' },
+  { id: 'coworking-coliving', name: 'Coworking & Coliving', image: '/coworking-coliving.png' },
 ];
 
 export const EcosystemSection = () => {
