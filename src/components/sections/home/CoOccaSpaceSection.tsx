@@ -76,7 +76,7 @@ export const CoOccaSpaceSection = () => {
           </h2>
         </div>
         <div className="max-w-xl lg:mt-12">
-          <p className="text-brand-gray-5 text-sm uppercase tracking-[0.15em] leading-relaxed">
+           <p className="text-brand-white/80 text-sm uppercase tracking-[0.15em] leading-relaxed">
             Uma infraestrutura de hospitalidade e produtividade desenhada especificamente para mentes criativas. Unimos a atmosfera inspiradora de Olinda à ferramentas de alta performance para impulsionar seus projetos.
           </p>
         </div>
