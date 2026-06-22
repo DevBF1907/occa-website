@@ -1,9 +1,16 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'motion/react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 
 export const HeroSection = () => {
+  const [showText, setShowText] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowText(false), 5000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -19,26 +26,31 @@ export const HeroSection = () => {
         <div className="absolute inset-0 bg-brand-black/40" />
       </div>
 
-      <div className="relative z-10 text-center px-6 translate-y-24">
-        <motion.div
-          initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
-          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <p className="text-sm md:text-base uppercase tracking-[0.3em] text-brand-white/80 mb-8">
-            Sem medo do erro, sem pavor de definições. Nós somos
-          </p>
-          <h1 className="text-[12vw] md:text-[8vw] font-display uppercase leading-[0.85] tracking-tighter mb-12 text-brand-white">
-            um ecossistema <br />
-            <span className="italic font-serif text-brand-gray-5 lowercase">que transforma o ser.</span>
-          </h1>
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-12">
-            <button className="px-12 py-5 bg-brand-white text-brand-black text-[11px] font-bold uppercase tracking-[0.3em] hover:bg-brand-accent hover:text-brand-white transition-all duration-500 hover-trigger">
-              SAIBA MAIS
-            </button>
+      <AnimatePresence>
+        {showText && (
+          <div className="relative z-10 text-center px-6 translate-y-24">
+            <motion.div
+              initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              exit={{ opacity: 0, filter: 'blur(10px)' }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <p className="text-sm md:text-base uppercase tracking-[0.3em] text-brand-white/80 mb-8">
+                Sem medo do erro, sem pavor de definições. Nós somos
+              </p>
+              <h1 className="text-[12vw] md:text-[8vw] font-display uppercase leading-[0.85] tracking-tighter mb-12 text-brand-white">
+                um ecossistema <br />
+                <span className="italic font-serif text-brand-gray-5 lowercase">que transforma o ser.</span>
+              </h1>
+              <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-12">
+                <button className="px-12 py-5 bg-brand-white text-brand-black text-[11px] font-bold uppercase tracking-[0.3em] hover:bg-brand-accent hover:text-brand-white transition-all duration-500 hover-trigger">
+                  SAIBA MAIS
+                </button>
+              </div>
+            </motion.div>
           </div>
-        </motion.div>
-      </div>
+        )}
+      </AnimatePresence>
 
       <div className="absolute bottom-12 left-12 hidden md:block z-10">
         <div className="flex items-center gap-6">
