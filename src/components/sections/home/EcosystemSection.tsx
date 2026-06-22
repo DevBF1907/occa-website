@@ -14,33 +14,10 @@ interface Initiative {
 }
 
 const INITIATIVES: Initiative[] = [
-  {
-    id: 'cooccaspace',
-    name: 'Co.OCCA.Space',
-    description: 'Infraestrutura administrativa — coworking, coliving e espaços para criar.',
-    link: '/services/cooccaspace',
-    image: '/occa-social.png'
-  },
-  {
-    id: 'open-innovation',
-    name: 'OCCA Open Innovation',
-    description: 'Produtos e Serviços de Inovação Aberta para empresas e instituições.',
-    link: '/services/occaopeninovation',
-    image: '/occasulo.png'
-  },
-  {
-    id: 'academy',
-    name: 'OCCA Academy',
-    description: 'Programas educacionais — cursos, bootcamps e residências.',
-    link: '/ecosystem/academy',
-    image: '/occa-academy.png'
-  },
-  {
-    id: 'occasulo',
-    name: 'OCCAsulo',
-    description: 'Incubadora distribuída para territórios — impacto local e global.',
-    link: '/ecosystem/occasulo'
-  },
+  { id: 'social-club', name: 'OCCA Social Club', image: '/occa-social-club.png' },
+  { id: 'occasulo', name: 'OccaSulO', image: '/occasulo.png' },
+  { id: 'academy', name: 'OCCA Academy', image: '/occa-academy.png' },
+  { id: 'coworking-coliving', name: 'Coworking & Coliving', image: '/coworking-coliving.png' },
 ];
 
 export const EcosystemSection = () => {

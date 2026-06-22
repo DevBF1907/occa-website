@@ -39,17 +39,11 @@ export const ManifestoSection = () => {
           </div>
         </div>
         <div className="relative aspect-square overflow-hidden group">
-           <img 
-            src="https://images.unsplash.com/photo-1542621334-a254cf47733d?auto=format&fit=crop&q=80&w=2070" 
-            alt="Manifesto detail"
-            className="w-full h-full object-cover grayscale transition-transform duration-1000 group-hover:scale-110"
-            referrerPolicy="no-referrer"
+          <img
+            src="/logo-occa.png"
+            alt="OCCA Logo"
+            className="w-full h-full object-contain p-12 transition-transform duration-1000 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-brand-rust/20 mix-blend-overlay" />
-          <div className="absolute bottom-8 left-8 right-8 p-6 border border-brand-white/20 bg-brand-black/60 backdrop-blur-md">
-            <p className="text-[10px] font-bold uppercase tracking-[0.4em] mb-2 text-brand-white">INFRAESTRUTURA FÍSICA E DIGITAL</p>
-            <p className="text-xs text-brand-white/80">Uma arquitetura projetada para a colaboração radical.</p>
-          </div>
         </div>
       </div>
     </section>
