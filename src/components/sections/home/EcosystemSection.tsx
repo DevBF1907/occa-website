@@ -8,8 +8,8 @@ import { SectionLabel } from '@/components/shared/SectionLabel';
 interface Initiative {
   id: string;
   name: string;
-  description: string;
-  link: string;
+  description?: string;
+  link?: string;
   image?: string;
 }
 
