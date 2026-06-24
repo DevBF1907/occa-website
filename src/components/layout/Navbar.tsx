@@ -16,9 +16,9 @@ const NAV_LINKS = [
     items: [
       { name: 'Co.OCCA.Space', href: '/services/cooccaspace' },
       { name: 'OCCA Open Innovation', href: '/services/occaopeninovation' },
-      { name: 'Wiki', href: '/hub' }
     ]
   },
+  { name: 'WIKI', href: 'https://wiki.occa.space/index.php/P%C3%A1gina_principal', external: true },
   { name: 'COMUNIDADE', href: '/community' },
   { name: 'Fale Conosco', href: '/contactus' },
 ];
@@ -77,6 +77,15 @@ export const Navbar = () => {
                       </div>
                     </div>
                   </div>
+                ) : link.external ? (
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[10px] font-bold tracking-[0.3em] uppercase transition-all duration-300 hover:text-brand-white hover-trigger border-b border-transparent hover:border-brand-white text-brand-white"
+                  >
+                    {link.name}
+                  </a>
                 ) : (
                   <Link
                     href={link.href}
@@ -146,6 +155,16 @@ export const Navbar = () => {
                         ))}
                       </div>
                     </div>
+                  ) : link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsOpen(false)}
+                      className="text-4xl font-display tracking-tight text-brand-white uppercase block"
+                    >
+                      {link.name}
+                    </a>
                   ) : (
                     <Link
                       href={link.href}

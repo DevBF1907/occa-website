@@ -59,9 +59,14 @@ export default function Home() {
                   Indivíduos × Instituições
                 </span>
               </button>
-              <button className="w-full md:w-auto px-16 py-6 border border-brand-white/20 text-xs font-bold uppercase tracking-[0.3em] hover:bg-brand-white hover:text-brand-black transition-all duration-500 hover-trigger">
+              <a
+                href="https://occa.space/occa-social-club/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full md:w-auto px-16 py-6 border border-brand-white/20 text-xs font-bold uppercase tracking-[0.3em] hover:bg-brand-white hover:text-brand-black transition-all duration-500 hover-trigger inline-block text-center"
+              >
                 SOCIAL CLUB
-              </button>
+              </a>
             </div>
           </div>
         </section>
