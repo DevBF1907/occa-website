@@ -19,6 +19,14 @@ const NAV_LINKS = [
     ]
   },
   { name: 'WIKI', href: 'https://wiki.occa.space/index.php/P%C3%A1gina_principal', external: true },
+  {
+    name: 'TRANSPARÊNCIA',
+    href: '#',
+    items: [
+      { name: 'DOCUMENTAÇÃO', href: 'https://wiki.occa.space/index.php/Documenta%C3%A7%C3%A3o', external: true },
+      { name: 'FAQ', href: 'https://wiki.occa.space/index.php/Perguntas_Frequentes', external: true },
+    ]
+  },
   { name: 'COMUNIDADE', href: '/community' },
   { name: 'Fale Conosco', href: '/contactus' },
 ];
@@ -65,9 +73,19 @@ export const Navbar = () => {
                     {/* Dropdown Menu */}
                     <div className="absolute top-full left-0 pt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                       <div className="bg-brand-black/90 backdrop-blur-md border border-brand-white/10 p-6 min-w-[220px] flex flex-col gap-5 shadow-2xl">
-                        {link.items.map(subItem => (
-                          <Link 
-                            key={subItem.name} 
+                        {link.items.map(subItem => subItem.external ? (
+                          <a
+                            key={subItem.name}
+                            href={subItem.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[10px] font-bold tracking-[0.3em] uppercase text-brand-white/80 hover:text-brand-white hover:translate-x-1 transition-all border-b border-transparent hover:border-brand-white"
+                          >
+                            {subItem.name}
+                          </a>
+                        ) : (
+                          <Link
+                            key={subItem.name}
                             href={subItem.href}
                             className="text-[10px] font-bold tracking-[0.3em] uppercase text-brand-white/80 hover:text-brand-white hover:translate-x-1 transition-all border-b border-transparent hover:border-brand-white"
                           >
@@ -143,7 +161,18 @@ export const Navbar = () => {
                         {link.name}
                       </span>
                       <div className="flex flex-col gap-4 pl-6 border-l border-brand-white/10 ml-2 mt-2">
-                        {link.items.map(subItem => (
+                        {link.items.map(subItem => subItem.external ? (
+                          <a
+                            key={subItem.name}
+                            href={subItem.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() => setIsOpen(false)}
+                            className="text-2xl font-display tracking-tight text-brand-white uppercase"
+                          >
+                            {subItem.name}
+                          </a>
+                        ) : (
                           <Link
                             key={subItem.name}
                             href={subItem.href}
