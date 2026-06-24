@@ -39,21 +39,21 @@ export const FullManifestoSection = () => {
       <div className="max-w-5xl mx-auto">
         <SectionLabel className="justify-center mb-6">O MANIFESTO OCCA</SectionLabel>
 
-        <div className="text-center mb-24">
-          <p className="text-lg md:text-2xl font-serif italic text-brand-white/60 max-w-3xl mx-auto leading-relaxed">
+        <div className="text-center mb-24 max-w-4xl mx-auto">
+          <p className="text-2xl md:text-4xl lg:text-5xl font-serif italic text-brand-white leading-snug">
             &mdash; que a interseção seja morada de muitos, que as barreiras entre as áreas do conhecimento sejam menores &mdash;
           </p>
         </div>
 
-        <div className="relative">
-          <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-brand-accent via-brand-white/10 to-transparent hidden md:block" />
+        <div className="relative max-w-4xl mx-auto">
+          <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand-accent via-brand-white/20 to-transparent hidden md:block" />
 
-          <div className="space-y-6 md:pl-12">
+          <div className="space-y-8 md:pl-16">
             {MANIFESTO_LINES.map((line, i) => (
               <p
                 key={i}
-                className="text-sm md:text-base text-brand-white/80 leading-relaxed font-serif italic tracking-wide
-                  hover:text-brand-white hover:translate-x-2 transition-all duration-500 cursor-default"
+                className="text-xl md:text-2xl lg:text-3xl text-brand-white/90 leading-relaxed font-serif tracking-wide
+                  hover:text-brand-white hover:translate-x-3 transition-all duration-500 cursor-default"
               >
                 {line}
               </p>
@@ -61,9 +61,9 @@ export const FullManifestoSection = () => {
           </div>
         </div>
 
-        <div className="mt-20 pt-10 border-t border-brand-white/5 text-center">
-          <p className="text-xs uppercase tracking-[0.3em] text-brand-gray-4 mb-2">Autor</p>
-          <p className="text-lg font-display uppercase tracking-tight text-brand-white">
+        <div className="mt-28 pt-12 border-t border-brand-white/10 text-center max-w-4xl mx-auto">
+          <p className="text-xs uppercase tracking-[0.3em] text-brand-gray-4 mb-3">Autor</p>
+          <p className="text-2xl font-display uppercase tracking-tight text-brand-white">
             Felipe Galegario
           </p>
         </div>
