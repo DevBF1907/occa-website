@@ -18,6 +18,7 @@ const NAV_LINKS = [
       { name: 'OCCA Open Innovation', href: '/services/occaopeninovation' },
     ]
   },
+  { name: 'MANIFESTO', href: '/manifesto' },
   { name: 'WIKI', href: 'https://wiki.occa.space/index.php/P%C3%A1gina_principal', external: true },
   {
     name: 'TRANSPARÊNCIA',
