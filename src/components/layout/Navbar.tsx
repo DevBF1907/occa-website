@@ -117,9 +117,14 @@ export const Navbar = () => {
                 )}
               </div>
             ))}
-            <button className="px-8 py-3 bg-brand-white text-brand-black text-[10px] font-bold uppercase tracking-widest hover:bg-brand-accent hover:text-brand-white transition-all duration-300 hover-trigger shadow-lg shadow-brand-white/10">
-              MEMBERSHIP
-            </button>
+            <a
+              href="https://occa.space/occa-social-club/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3 bg-brand-white text-brand-black text-[10px] font-bold uppercase tracking-widest hover:bg-brand-accent hover:text-brand-white transition-all duration-300 hover-trigger shadow-lg shadow-brand-white/10"
+            >
+              SOCIAL CLUB
+            </a>
           </div>
 
           <button 
