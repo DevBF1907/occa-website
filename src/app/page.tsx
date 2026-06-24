@@ -50,9 +50,6 @@ export default function Home() {
               Seja como membro individual, parceiro institucional ou residente. O futuro é uma construção coletiva.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-              <button className="w-full md:w-auto px-16 py-6 bg-brand-white text-brand-black text-xs font-bold uppercase tracking-[0.3em] hover:bg-brand-accent hover:text-brand-white transition-all duration-500 hover-trigger shadow-lg shadow-brand-white/10">
-                MEMBERSHIP
-              </button>
               <button className="w-full md:w-auto px-16 py-6 border border-brand-white/20 text-xs font-bold uppercase tracking-[0.3em] hover:bg-brand-white hover:text-brand-black transition-all duration-500 hover-trigger relative group">
                 PARCERIAS
                 <span className="absolute -top-12 left-1/2 -translate-x-1/2 bg-brand-gray-2 text-brand-white/80 text-[9px] px-3 py-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
