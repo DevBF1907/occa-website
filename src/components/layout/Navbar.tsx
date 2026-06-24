@@ -29,7 +29,6 @@ const NAV_LINKS = [
     ]
   },
   { name: 'COMUNIDADE', href: '/community' },
-  { name: 'Fale Conosco', href: '/contactus' },
 ];
 
 export const Navbar = () => {
