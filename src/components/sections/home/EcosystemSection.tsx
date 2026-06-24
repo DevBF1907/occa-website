@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Hexagon, Circle, Triangle, Square } from 'lucide-react';
 import { SectionLabel } from '@/components/shared/SectionLabel';
 
 interface Initiative {
@@ -10,14 +10,35 @@ interface Initiative {
   name: string;
   description?: string;
   link?: string;
-  image?: string;
+  icon: React.ElementType;
+  gradient: string;
 }
 
 const INITIATIVES: Initiative[] = [
-  { id: 'social-club', name: 'OCCA Social Club', image: '/occa-social-club.png' },
-  { id: 'occasulo', name: 'OccaSulO', image: '/occasulo.png' },
-  { id: 'academy', name: 'OCCA Academy', image: '/occa-academy.png' },
-  { id: 'coworking-coliving', name: 'Coworking & Coliving', image: '/coworking-coliving.png' },
+  {
+    id: 'social-club',
+    name: 'OCCA Social Club',
+    icon: Hexagon,
+    gradient: 'from-amber-500/20 via-amber-500/5 to-transparent',
+  },
+  {
+    id: 'occasulo',
+    name: 'OccaSulO',
+    icon: Circle,
+    gradient: 'from-emerald-500/20 via-emerald-500/5 to-transparent',
+  },
+  {
+    id: 'academy',
+    name: 'OCCA Academy',
+    icon: Triangle,
+    gradient: 'from-sky-500/20 via-sky-500/5 to-transparent',
+  },
+  {
+    id: 'coworking-coliving',
+    name: 'Coworking & Coliving',
+    icon: Square,
+    gradient: 'from-violet-500/20 via-violet-500/5 to-transparent',
+  },
 ];
 
 export const EcosystemSection = () => {
@@ -36,39 +57,31 @@ export const EcosystemSection = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {INITIATIVES.map((item) => (
-          <a
-            key={item.id}
-            href={item.link}
-            className="group relative overflow-hidden border border-brand-white/5 hover:border-brand-white/20 transition-all duration-500 cursor-pointer block hover-trigger h-[500px]"
-          >
-            {item.image ? (
-              <div className="absolute inset-0 bg-brand-black">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-full h-full object-contain grayscale opacity-40 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-brand-black/40 to-brand-black/20" />
+        {INITIATIVES.map((item) => {
+          const Icon = item.icon;
+          return (
+            <a
+              key={item.id}
+              href={item.link}
+              className="group relative overflow-hidden border border-brand-white/5 hover:border-brand-white/20 transition-all duration-500 cursor-pointer block hover-trigger h-[400px] flex flex-col items-center justify-center"
+            >
+              <div className={`absolute inset-0 bg-gradient-to-b ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
+
+              <div className="relative z-10 flex flex-col items-center text-center px-8">
+                <div className="mb-8 text-brand-white/20 group-hover:text-brand-white/40 transition-all duration-500 group-hover:scale-110">
+                  <Icon className="w-24 h-24 md:w-32 md:h-32 stroke-[1]" />
+                </div>
+                <h3 className="text-2xl md:text-3xl font-display uppercase tracking-tight text-brand-white/90 group-hover:text-brand-white transition-colors">
+                  {item.name}
+                </h3>
+                <div className="flex items-center gap-3 text-brand-white/30 group-hover:text-brand-white/60 transition-all mt-6 opacity-0 group-hover:opacity-100">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.3em]">EXPLORAR</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </div>
               </div>
-            ) : (
-              <div className="absolute inset-0 bg-brand-gray-1/30 group-hover:bg-brand-gray-1/50 transition-colors" />
-            )}
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-transparent" />
-            <div className="relative z-10 h-full flex flex-col justify-end p-8">
-              <h3 className="text-3xl md:text-4xl font-display uppercase tracking-tight text-brand-white group-hover:text-brand-white transition-colors mb-3">
-                {item.name}
-              </h3>
-              <p className="text-xs text-brand-white/70 leading-relaxed max-w-xs">
-                {item.description}
-              </p>
-              <div className="flex items-center gap-3 text-brand-white/50 group-hover:text-brand-white transition-all mt-6 opacity-0 group-hover:opacity-100">
-                <span className="text-[10px] font-bold uppercase tracking-[0.3em]">EXPLORAR</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </div>
-          </a>
-        ))}
+            </a>
+          );
+        })}
       </div>
     </section>
   );
