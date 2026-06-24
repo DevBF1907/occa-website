@@ -28,7 +28,6 @@ const NAV_LINKS = [
       { name: 'FAQ', href: 'https://wiki.occa.space/index.php/Perguntas_Frequentes', external: true },
     ]
   },
-  { name: 'COMUNIDADE', href: '/community' },
 ];
 
 export const Navbar = () => {
