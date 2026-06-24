@@ -4,6 +4,7 @@ import { Footer } from '@/components/layout/Footer';
 import { HeroSection } from '@/components/sections/home/HeroSection';
 import { ManifestoSection } from '@/components/sections/home/ManifestoSection';
 import { EcosystemSection } from '@/components/sections/home/EcosystemSection';
+import { FullManifestoSection } from '@/components/sections/home/FullManifestoSection';
 import { SectionLabel } from '@/components/shared/SectionLabel';
 
 const PARTNER_BRANDS = [
@@ -37,6 +38,7 @@ export default function Home() {
         </div>
 
         <ManifestoSection />
+        <FullManifestoSection />
         <EcosystemSection />
 
         {/* Community CTA */}
