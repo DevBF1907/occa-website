@@ -12,20 +12,30 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 ;
 const metadata = {
-    title: 'OCCA | Future of Creativity',
-    description: 'Open Creative Community Alliance - Um ecossistema vivo de inovação e cultura, operando na interseção entre tecnologia e comunidade em Olinda, Pernambuco.',
+    title: 'OCCA — Olinda Creative Community Action | Olinda, PE',
+    description: 'Um ecossistema que transforma o ser — Inovação, cultura, tecnologia e sustentabilidade em Olinda, Pernambuco.',
     openGraph: {
-        title: 'OCCA | Future of Creativity',
-        description: 'Open Creative Community Alliance - Inovação e cultura em Olinda.',
+        title: 'OCCA — Olinda Creative Community Action | Olinda, PE',
+        description: 'Um ecossistema que transforma o ser — Inovação, cultura, tecnologia e sustentabilidade em Olinda, Pernambuco.',
         url: 'https://occa.space',
         siteName: 'OCCA Space',
         locale: 'pt_BR',
-        type: 'website'
+        type: 'website',
+        images: [
+            {
+                url: '/og-image.png',
+                width: 1200,
+                height: 630
+            }
+        ]
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'OCCA | Future of Creativity',
-        description: 'Open Creative Community Alliance - Inovação e cultura em Olinda.'
+        title: 'OCCA — Olinda Creative Community Action | Olinda, PE',
+        description: 'Um ecossistema que transforma o ser — Inovação, cultura, tecnologia e sustentabilidade em Olinda, Pernambuco.',
+        images: [
+            '/og-image.png'
+        ]
     }
 };
 function RootLayout({ children }) {
@@ -39,18 +49,18 @@ function RootLayout({ children }) {
                     className: "scan-line"
                 }, void 0, false, {
                     fileName: "[project]/src/app/layout.tsx",
-                    lineNumber: 31,
+                    lineNumber: 33,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/layout.tsx",
-            lineNumber: 29,
+            lineNumber: 31,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/layout.tsx",
-        lineNumber: 28,
+        lineNumber: 30,
         columnNumber: 5
     }, this);
 }

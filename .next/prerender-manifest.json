@@ -74,6 +74,78 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/about": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/about",
+      "dataRoute": "/about.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/contactus": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/contactus",
+      "dataRoute": "/contactus.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/mandala": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/mandala",
+      "dataRoute": "/mandala.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/services/cooccaspace": {
       "experimentalBypassFor": [
         {
@@ -102,8 +174,8 @@
   "dynamicRoutes": {},
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "890ffe5ad9ef655324f002c2a5b7946a",
-    "previewModeSigningKey": "0d5251b33b497a7d2dd2bede5be81b815dda39c679f2e481d45fbe9125f3421a",
-    "previewModeEncryptionKey": "4260c2ad3053cf561b0bfd85d513e1789bc425bc6f83f55e70cc1b3d2a2f5ca1"
+    "previewModeId": "5f7d1811e5c0feee07e13cfc8f03e028",
+    "previewModeSigningKey": "f1451f70cae032f5a89e0cc073779930496ff6a891fdccbfeb67725002d40aec",
+    "previewModeEncryptionKey": "49dec10b9ebb327c1e6ee3fa27711ee1903146091b8adbe487f08bab63145faa"
   }
 }
