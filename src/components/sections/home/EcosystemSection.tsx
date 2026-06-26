@@ -8,14 +8,16 @@ import { SectionLabel } from '@/components/shared/SectionLabel';
 interface Initiative {
   id: string;
   name: string;
+  description: string;
+  link: string;
   image?: string;
 }
 
 const INITIATIVES: Initiative[] = [
-  { id: 'social-club', name: 'OCCA Social Club', image: '/occa-social-club.png' },
-  { id: 'occasulo', name: 'OccaSulO', image: '/occasulo.png' },
-  { id: 'academy', name: 'OCCA Academy', image: '/occa-academy.png' },
-  { id: 'coworking-coliving', name: 'Coworking & Coliving' },
+  { id: 'social-club', name: 'OCCA Social Club', description: 'Espaço de convivência e networking para membros', image: '/occa-social-club.png', link: '/services/social-club' },
+  { id: 'occasulo', name: 'OccaSulO', description: 'Conexão sul-americana de inovação', image: '/occasulo.png', link: '/services/occasulo' },
+  { id: 'academy', name: 'OCCA Academy', description: 'Formação e capacitação em criatividade', image: '/occa-academy.png', link: '/services/academy' },
+  { id: 'coworking-coliving', name: 'Coworking & Coliving', description: 'Espaços compartilhados para viver e trabalhar', image: '/coworking-coliving.png', link: '/services/coworking-coliving' },
 ];
 
 export const EcosystemSection = () => {
@@ -38,33 +40,29 @@ export const EcosystemSection = () => {
           <a
             key={item.id}
             href={item.link}
-            className="group relative overflow-hidden border border-brand-white/5 hover:border-brand-white/20 transition-all duration-500 cursor-pointer block hover-trigger h-[420px]"
+            className="group relative overflow-hidden border border-brand-white/5 hover:border-brand-white/20 transition-all duration-500 cursor-pointer block hover-trigger h-[500px]"
           >
             {item.image ? (
-              <div className="absolute inset-0 flex items-center justify-center bg-brand-black p-12">
+              <div className="absolute inset-0 bg-brand-black">
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-full h-full object-contain opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                  className="w-full h-full object-contain grayscale opacity-40 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-brand-black/40 to-brand-black/20" />
               </div>
             ) : (
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-gray-1/40 to-brand-black flex items-center justify-center">
-                <div className="text-center px-8">
-                  <div className="w-20 h-20 mx-auto mb-6 rounded-2xl border border-brand-white/10 flex items-center justify-center">
-                    <span className="text-3xl font-display text-brand-white/30">CW</span>
-                  </div>
-                  <p className="text-xs text-brand-white/40 uppercase tracking-[0.2em]">Em breve</p>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/20 to-transparent" />
-              </div>
+              <div className="absolute inset-0 bg-brand-gray-1/30 group-hover:bg-brand-gray-1/50 transition-colors" />
             )}
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-transparent" />
             <div className="relative z-10 h-full flex flex-col justify-end p-8">
-              <h3 className="text-2xl md:text-3xl font-display uppercase tracking-tight text-brand-white">
+              <h3 className="text-3xl md:text-4xl font-display uppercase tracking-tight text-brand-white group-hover:text-brand-white transition-colors mb-3">
                 {item.name}
               </h3>
-              <div className="flex items-center gap-3 text-brand-white/50 group-hover:text-brand-white transition-all mt-4 opacity-0 group-hover:opacity-100">
+              <p className="text-xs text-brand-white/70 leading-relaxed max-w-xs">
+                {item.description}
+              </p>
+              <div className="flex items-center gap-3 text-brand-white/50 group-hover:text-brand-white transition-all mt-6 opacity-0 group-hover:opacity-100">
                 <span className="text-[10px] font-bold uppercase tracking-[0.3em]">EXPLORAR</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </div>
