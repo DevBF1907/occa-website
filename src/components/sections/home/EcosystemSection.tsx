@@ -8,14 +8,16 @@ import { SectionLabel } from '@/components/shared/SectionLabel';
 interface Initiative {
   id: string;
   name: string;
+  description: string;
+  link: string;
   image?: string;
 }
 
 const INITIATIVES: Initiative[] = [
-  { id: 'social-club', name: 'OCCA Social Club', image: '/occa-social-club.png' },
-  { id: 'occasulo', name: 'OccaSulO', image: '/occasulo.png' },
-  { id: 'academy', name: 'OCCA Academy', image: '/occa-academy.png' },
-  { id: 'coworking-coliving', name: 'Coworking & Coliving' },
+  { id: 'social-club', name: 'OCCA Social Club', description: 'Espaço de convivência e networking para membros', image: '/occa-social-club.png', link: '/services/social-club' },
+  { id: 'occasulo', name: 'OccaSulO', description: 'Conexão sul-americana de inovação', image: '/occasulo.png', link: '/services/occasulo' },
+  { id: 'academy', name: 'OCCA Academy', description: 'Formação e capacitação em criatividade', image: '/occa-academy.png', link: '/services/academy' },
+  { id: 'coworking-coliving', name: 'Coworking & Coliving', description: 'Espaços compartilhados para viver e trabalhar', link: '/services/coworking-coliving' },
 ];
 
 export const EcosystemSection = () => {
@@ -64,6 +66,9 @@ export const EcosystemSection = () => {
               <h3 className="text-2xl md:text-3xl font-display uppercase tracking-tight text-brand-white">
                 {item.name}
               </h3>
+              <p className="text-xs text-brand-white/70 leading-relaxed max-w-xs mt-3">
+                {item.description}
+              </p>
               <div className="flex items-center gap-3 text-brand-white/50 group-hover:text-brand-white transition-all mt-4 opacity-0 group-hover:opacity-100">
                 <span className="text-[10px] font-bold uppercase tracking-[0.3em]">EXPLORAR</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
