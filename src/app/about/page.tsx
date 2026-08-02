@@ -10,6 +10,13 @@ import { SectionLabel } from '@/components/shared/SectionLabel';
 import { TEAM, PROGRAMS } from '@/lib/data';
 import { MapPin, Target, Globe } from 'lucide-react';
 
+// TODO: coloque aqui o número oficial de contato (código do país + DDD + número, somente dígitos).
+// Exemplo: +55 (81) 9145-6002 -> 558191456002
+const WHATSAPP_NUMBER = '558191456002';
+
+const waLink = (message: string) =>
+  `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(message)}`;
+
 const VALUES = [
   {
     icon: Target,
@@ -39,7 +46,7 @@ export default function AboutPage() {
             <img
               src="/logo-occa.png"
               alt=""
-              className="w-3/4 h-auto max-w-[700px] opacity-[0.12]"
+              className="w-3/4 h-auto max-w-[700px] opacity-[0.12] theme-logo"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/40 to-brand-black" />
           </div>
@@ -178,12 +185,14 @@ export default function AboutPage() {
               Seja como membro, parceiro ou residente — o futuro é uma construção coletiva.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                href="/contactus"
+              <a
+                href={waLink('Olá! Gostaria de falar com a OCCA.')}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-12 py-5 bg-brand-white text-brand-black text-xs font-bold uppercase tracking-[0.3em] hover:bg-brand-accent hover:text-brand-white transition-all duration-500 hover-trigger"
               >
                 FALE CONOSCO
-              </Link>
+              </a>
               <Link
                 href="/services/cooccaspace"
                 className="px-12 py-5 border border-brand-white/20 text-xs font-bold uppercase tracking-[0.3em] hover:bg-brand-white hover:text-brand-black transition-all duration-500 hover-trigger"

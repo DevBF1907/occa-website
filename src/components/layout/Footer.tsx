@@ -6,7 +6,7 @@ export const Footer = () => (
     <div className="max-w-[1800px] mx-auto">
       <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
         <div className="max-w-xs">
-          <img src="/logo-occa.png" alt="OCCA" className="h-10 w-auto mb-6" />
+          <img src="/logo-occa.png" alt="OCCA" className="h-10 w-auto mb-6 theme-logo" />
           <p className="text-brand-white/70 text-sm leading-relaxed">
             Um ecossistema vivo de inovação e cultura, operando na interseção entre tecnologia e comunidade.
           </p>
