@@ -1,7 +1,0 @@
-<<<<<<< HEAD
-:HL["/_next/static/chunks/0r9-2yl7qi9d0.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"mandala","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"OQqD4NAWVKuiLOjouuZAr"}
-=======
-:HL["/_next/static/chunks/0-t6ndvqmqpgi.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"mandala","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"guAL4k4sAhO64-fxKr9ba"}
->>>>>>> desenvolvimento
