@@ -16,6 +16,13 @@ interface SpaceCard {
   icon: React.ReactNode;
 }
 
+// TODO: coloque aqui o número oficial de contato (código do país + DDD + número, somente dígitos).
+// Exemplo: +55 (81) 9145-6002 -> 558191456002
+const WHATSAPP_NUMBER = '558191456002';
+
+const waLink = (message: string) =>
+  `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(message)}`;
+
 const CARDS: SpaceCard[] = [
   {
     id: 'coworking',
@@ -139,12 +146,17 @@ export const CoOccaSpaceSection = () => {
               </ul>
 
               {/* Action Indicator */}
-              <div className="flex items-center gap-4 text-brand-white group-hover:translate-x-1 transition-transform duration-300">
+              <a
+                href={waLink(`Olá! Gostaria de solicitar acesso ao ${card.title} da OCCA.`)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 text-brand-white group-hover:translate-x-1 transition-transform duration-300"
+              >
                 <span className="text-[10px] font-mono font-bold uppercase tracking-[0.3em]">SOLICITAR ACESSO</span>
                 <div className="w-8 h-8 rounded-full border border-brand-white/20 flex items-center justify-center bg-brand-black/40 group-hover:bg-brand-white group-hover:text-brand-black transition-colors duration-500">
                   <ArrowRight className="w-4 h-4" />
                 </div>
-              </div>
+              </a>
             </div>
           </motion.div>
         ))}

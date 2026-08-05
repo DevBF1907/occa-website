@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { ThemeProvider } from '@/components/theme/ThemeProvider';
 
 export const metadata: Metadata = {
   title: 'OCCA — Olinda Creative Community Action | Olinda, PE',
@@ -28,9 +29,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(!t){t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark';}if(t==='light'){document.documentElement.classList.add('light');}}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body className="antialiased">
-        {children}
-        <div className="scan-line" />
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

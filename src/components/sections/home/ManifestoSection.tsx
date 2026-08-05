@@ -42,7 +42,7 @@ export const ManifestoSection = () => {
           <img
             src="/logo-occa.png"
             alt="OCCA Logo"
-            className="w-full h-full object-contain p-12 transition-transform duration-1000 group-hover:scale-105"
+            className="w-full h-full object-contain p-12 transition-transform duration-1000 group-hover:scale-105 theme-logo"
           />
         </div>
       </div>

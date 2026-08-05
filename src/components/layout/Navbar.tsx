@@ -4,8 +4,9 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Sun, Moon } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useTheme } from '@/components/theme/ThemeProvider';
 
 const NAV_LINKS = [
   { name: 'O ECOSSISTEMA', href: '/#ecossistema' },
@@ -34,6 +35,7 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -52,7 +54,7 @@ export const Navbar = () => {
             <img
               src="/logo-occa.png"
               alt="OCCA"
-              className="h-10 w-auto"
+              className="h-10 w-auto theme-logo"
             />
           </Link>
 
@@ -116,6 +118,13 @@ export const Navbar = () => {
                 )}
               </div>
             ))}
+            <button
+              onClick={toggleTheme}
+              className="text-brand-white/70 hover:text-brand-white transition-colors hover-trigger"
+              aria-label={theme === 'dark' ? 'Ativar modo claro' : 'Ativar modo escuro'}
+            >
+              {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            </button>
             <a
               href="https://occa.space/occa-social-club/"
               target="_blank"
@@ -149,8 +158,11 @@ export const Navbar = () => {
               <img
                 src="/logo-occa.png"
                 alt="OCCA"
-                className="h-10 w-auto"
+                className="h-10 w-auto theme-logo"
               />
+              <button onClick={toggleTheme} aria-label={theme === 'dark' ? 'Ativar modo claro' : 'Ativar modo escuro'}>
+                {theme === 'dark' ? <Sun className="w-6 h-6 text-brand-white" /> : <Moon className="w-6 h-6 text-brand-white" />}
+              </button>
               <button onClick={() => setIsOpen(false)} aria-label="Fechar menu">
                 <X className="w-6 h-6 text-brand-white" />
               </button>

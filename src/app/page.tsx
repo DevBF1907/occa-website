@@ -13,6 +13,13 @@ const PARTNER_BRANDS = [
   'Vagalume', 'Lideri Telecom'
 ];
 
+// TODO: coloque aqui o número oficial de contato (código do país + DDD + número, somente dígitos).
+// Exemplo: +55 (81) 9145-6002 -> 558191456002
+const WHATSAPP_NUMBER = '558191456002';
+
+const waLink = (message: string) =>
+  `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(message)}`;
+
 export default function Home() {
   return (
     <>
@@ -50,12 +57,17 @@ export default function Home() {
               Seja como membro individual, parceiro institucional ou residente. O futuro é uma construção coletiva.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-              <button className="w-full md:w-auto px-16 py-6 border border-brand-white/20 text-xs font-bold uppercase tracking-[0.3em] hover:bg-brand-white hover:text-brand-black transition-all duration-500 hover-trigger relative group">
+              <a
+                href={waLink('Olá! Gostaria de saber mais sobre parcerias com a OCCA.')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full md:w-auto px-16 py-6 border border-brand-white/20 text-xs font-bold uppercase tracking-[0.3em] hover:bg-brand-white hover:text-brand-black transition-all duration-500 hover-trigger relative group"
+              >
                 PARCERIAS
                 <span className="absolute -top-12 left-1/2 -translate-x-1/2 bg-brand-gray-2 text-brand-white/80 text-[9px] px-3 py-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
                   Indivíduos × Instituições
                 </span>
-              </button>
+              </a>
               <a
                 href="https://occa.space/occa-social-club/"
                 target="_blank"

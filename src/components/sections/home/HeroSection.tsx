@@ -17,22 +17,20 @@ export const HeroSection = () => {
         <iframe
           src="https://www.youtube.com/embed/V4pausDurSI?autoplay=1&mute=1&loop=1&playlist=V4pausDurSI&controls=0&modestbranding=1&rel=0&playsinline=1&enablejsapi=1&iv_load_policy=3"
           title="OCCA Space"
-          className="absolute left-1/2 top-1/2 h-[120vh] w-[120vw] -translate-x-1/2 -translate-y-1/2 opacity-50 grayscale transition-opacity duration-1000 pointer-events-none mix-blend-luminosity"
+          className="absolute left-1/2 top-1/2 h-[120vh] w-[120vw] -translate-x-1/2 -translate-y-1/2 transition-opacity duration-1000 pointer-events-none"
           allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
           allowFullScreen
           referrerPolicy="strict-origin-when-cross-origin"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/20 to-brand-black/60" />
-        <div className="absolute inset-0 bg-brand-black/40" />
       </div>
 
       <AnimatePresence>
         {showText && (
           <div className="relative z-10 text-center px-6 translate-y-24">
             <motion.div
-              initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
-              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-              exit={{ opacity: 0, filter: 'blur(10px)' }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             >
               <p className="text-sm md:text-base uppercase tracking-[0.3em] text-brand-white/80 mb-8">

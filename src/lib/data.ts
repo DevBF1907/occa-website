@@ -52,17 +52,24 @@ export const PROGRAMS: Program[] = [
   }
 ];
 
+// TODO: preencher cargo (role), bio e foto (image) de cada integrante
 export const TEAM = [
   {
-    name: 'Helder Santos',
-    role: 'Managing Director',
-    bio: 'Estrategista de inovação e entusiasta cultural.',
+    name: 'Victor',
+    role: 'Cargo',
+    bio: 'Descrição.',
     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=300&h=300&q=80',
   },
   {
-    name: 'Mariana Oliveira',
-    role: 'Artistic Curator',
-    bio: 'Curadoria de projetos que unem tecnologia e expressão regional.',
+    name: 'Vitória',
+    role: 'Cargo',
+    bio: 'Descrição.',
     image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=facearea&facepad=2&w=300&h=300&q=80',
-  }
+  },
+  {
+    name: 'Kleber',
+    role: 'Cargo',
+    bio: 'Descrição.',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=facearea&facepad=2&w=300&h=300&q=80',
+  },
 ];

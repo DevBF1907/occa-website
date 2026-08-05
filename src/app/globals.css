@@ -5,16 +5,46 @@
   --font-mono: "DM Mono", monospace;
   --font-display: "Bebas Neue", sans-serif;
   --font-serif: "Instrument Serif", serif;
-  
-  --color-brand-black: #080808;
-  --color-brand-white: #f4f2ee;
-  --color-brand-gray-1: #111111;
-  --color-brand-gray-2: #1a1a1a;
-  --color-brand-gray-3: #2a2a2a;
-  --color-brand-gray-4: #666666;
-  --color-brand-gray-5: #a0a0a0;
-  --color-brand-rust: #642a0a;
-  --color-brand-accent: #c94d2b;
+}
+
+@theme inline {
+  --color-brand-black: var(--brand-black);
+  --color-brand-white: var(--brand-white);
+  --color-brand-gray-1: var(--brand-gray-1);
+  --color-brand-gray-2: var(--brand-gray-2);
+  --color-brand-gray-3: var(--brand-gray-3);
+  --color-brand-gray-4: var(--brand-gray-4);
+  --color-brand-gray-5: var(--brand-gray-5);
+  --color-brand-rust: var(--brand-rust);
+  --color-brand-accent: var(--brand-accent);
+}
+
+:root {
+  --brand-black: #080808;
+  --brand-white: #f4f2ee;
+  --brand-gray-1: #111111;
+  --brand-gray-2: #1a1a1a;
+  --brand-gray-3: #2a2a2a;
+  --brand-gray-4: #666666;
+  --brand-gray-5: #a0a0a0;
+  --brand-rust: #642a0a;
+  --brand-accent: #c94d2b;
+}
+
+.light {
+  --brand-black: #f4f2ee;
+  --brand-white: #080808;
+  --brand-gray-1: #ffffff;
+  --brand-gray-2: #efe9e1;
+  --brand-gray-3: #d7d0c6;
+  --brand-gray-4: #5f5a53;
+  --brand-gray-5: #6b655e;
+  --brand-rust: #8a3a0f;
+  --brand-accent: #b04425;
+}
+
+.light .theme-logo {
+  filter: invert(1);
 }
 
 @layer base {
@@ -22,20 +52,6 @@
     @apply bg-brand-black text-brand-white font-mono text-[13px] leading-relaxed;
     overflow-x: hidden;
   }
-}
-
-/* Animations */
-@keyframes scan {
-  0%, 100% { top: -2px; opacity: 0; }
-  20% { opacity: 1; }
-  80% { opacity: 1; }
-  100% { top: 100vh; opacity: 0; }
-}
-
-.scan-line {
-  @apply fixed left-0 right-0 h-px pointer-events-none z-[100] opacity-20 shadow-[0_0_10px_rgba(244,242,238,0.3)];
-  background: linear-gradient(90deg, transparent, rgba(244, 242, 238, 0.15), transparent);
-  animation: scan 6s ease-in-out infinite;
 }
 
 .marquee-animation {
@@ -64,4 +80,3 @@
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-brand-gray-5);
 }
-
